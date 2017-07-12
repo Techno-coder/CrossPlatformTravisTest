@@ -1,4 +1,4 @@
 all: main.o
 
 main.o:
-	clang++ main.cpp
+	$(CXX) main.cpp

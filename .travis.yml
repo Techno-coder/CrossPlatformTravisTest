@@ -1,5 +1,8 @@
 language: cpp
 
+dist: trusty
+sudo: false
+
 os:
     - linux
     - osx
@@ -7,5 +10,10 @@ os:
 compiler:
     - clang
 
+before_install:
+    - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then apt-get install mingw32; fi
+
 script:
-    make all
+    - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then make CXX=clang++; fi
+    - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then make CXX=586-mingw32msvc-g++; fi
+    - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then make CXX=clang++; fi
