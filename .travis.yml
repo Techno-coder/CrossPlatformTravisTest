@@ -11,4 +11,4 @@ before_install:
 
 script:
     - make CXX=clang++
-    - make CXX=586-mingw32msvc-g++
+    - make CXX=i586-mingw32msvc-g++
