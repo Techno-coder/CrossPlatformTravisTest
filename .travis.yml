@@ -6,9 +6,9 @@ compiler:
     - clang
 
 addons:
-    apt:
-        packages:
-	    - mingw32
+  apt:
+    packages:
+    - mingw32
 
 script:
     - make CXX=clang++
