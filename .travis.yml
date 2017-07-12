@@ -1,13 +1,14 @@
 language: cpp
 
 dist: trusty
-sudo: required
 
 compiler:
     - clang
 
-before_install:
-    - sudo apt-get install mingw32
+addons:
+    apt:
+        packages:
+	    - mingw32
 
 script:
     - make CXX=clang++
